@@ -1,13 +1,11 @@
-# Arkane on Netlify (Next.js App Router).
-# Explicit Next.js runtime so Netlify does not treat .next as a bare static folder.
+# Arkane static site on Netlify (Next.js output: "export").
+# Publishes HTML from out/ so the homepage is a real index.html.
 
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
