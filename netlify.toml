@@ -1,0 +1,14 @@
+# Arkane on Netlify (Next.js App Router).
+# Runtime adapter is applied automatically by Netlify for Next.js 13.5+.
+# Do not pin @netlify/plugin-nextjs unless you need a fixed adapter version.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[functions]
+  node_bundler = "esbuild"
