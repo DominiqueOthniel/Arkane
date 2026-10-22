@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import LiquidMetal from "./LiquidMetal";
 import MagneticButton from "./MagneticButton";
+import SiteNav from "./SiteNav";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -28,26 +29,11 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.55)_75%,#000_100%)]"
       />
 
-      <header className="section-pad relative z-20 flex items-center justify-between pt-6">
-        <a href="#top" className="font-display text-sm tracking-[0.35em] text-chrome-200">
-          ARKANE
-        </a>
-        <nav className="hidden gap-8 text-xs uppercase tracking-[0.22em] text-chrome-300 sm:flex">
-          <a href="#signature" className="transition hover:text-white">
-            Signature
-          </a>
-          <a href="#atelier" className="transition hover:text-white">
-            Atelier
-          </a>
-          <a href="#contact" className="transition hover:text-white">
-            Contact
-          </a>
-        </nav>
-      </header>
+      <SiteNav />
 
       <motion.div
         style={{ opacity: fade }}
-        className="section-pad relative z-20 flex flex-1 flex-col items-center justify-center pb-16 pt-6 text-center"
+        className="section-pad relative z-20 flex flex-1 flex-col items-center justify-center pb-16 pt-24 text-center"
       >
         <motion.div
           style={{ y: logoY, scale: logoScale }}
@@ -85,7 +71,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.9 }}
         >
-          Le son qui frappe. Production musicale, mix et identité sonore.
+          Le son qui frappe. Production, kits et drops qui restent en tête.
         </motion.p>
 
         <motion.div
@@ -94,8 +80,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.85 }}
         >
-          <MagneticButton href="#signature">Écouter l&apos;esprit</MagneticButton>
-          <MagneticButton href="#contact" variant="ghost">
+          <MagneticButton href="/drops">Voir les drops</MagneticButton>
+          <MagneticButton href="/contact" variant="ghost">
             Démarrer un projet
           </MagneticButton>
         </motion.div>
