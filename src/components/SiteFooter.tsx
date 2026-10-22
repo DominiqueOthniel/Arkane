@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SLOGAN } from "@/lib/brand";
 import { navLinks } from "@/lib/nav";
 
 export default function SiteFooter() {
@@ -8,6 +9,9 @@ export default function SiteFooter() {
         <div>
           <p className="font-display text-sm tracking-[0.35em] text-chrome-200">
             ARKANE
+          </p>
+          <p className="mt-2 font-display text-sm tracking-[0.12em] text-chrome-300">
+            {SLOGAN}
           </p>
           <p className="mt-3 max-w-xs text-sm text-chrome-400">
             Maison de production musicale. Beats, kits, mix. Chrome liquide,

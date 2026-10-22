@@ -6,6 +6,7 @@ import { useRef } from "react";
 import LiquidMetal from "./LiquidMetal";
 import MagneticButton from "./MagneticButton";
 import SiteNav from "./SiteNav";
+import VowSlogan from "./VowSlogan";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -37,7 +38,7 @@ export default function Hero() {
       >
         <motion.div
           style={{ y: logoY, scale: logoScale }}
-          className="relative mb-8"
+          className="relative mb-6"
           initial={{ opacity: 0, scale: 0.88, filter: "blur(12px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.35, ease: [0.16, 1, 0.3, 1] }}
@@ -52,12 +53,12 @@ export default function Hero() {
             width={420}
             height={420}
             priority
-            className="relative mx-auto h-auto w-[min(72vw,340px)] drop-shadow-[0_0_60px_rgba(255,255,255,0.22)] sm:w-[min(56vw,400px)]"
+            className="relative mx-auto h-auto w-[min(68vw,300px)] drop-shadow-[0_0_60px_rgba(255,255,255,0.22)] sm:w-[min(48vw,360px)]"
           />
         </motion.div>
 
         <motion.h1
-          className="font-display chrome-text text-[clamp(3.4rem,14vw,8.5rem)] font-bold leading-[0.9] tracking-[-0.03em]"
+          className="font-display chrome-text text-[clamp(3.2rem,13vw,7.5rem)] font-bold leading-[0.9] tracking-[-0.03em]"
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -65,11 +66,15 @@ export default function Hero() {
           ARKANE
         </motion.h1>
 
+        <div className="mt-6 sm:mt-8">
+          <VowSlogan variant="hero" />
+        </div>
+
         <motion.p
-          className="mt-5 max-w-md font-body text-base text-chrome-200/85 sm:text-lg"
+          className="mt-6 max-w-md font-body text-sm text-chrome-300/90 sm:text-base"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.9 }}
+          transition={{ delay: 1.15, duration: 0.9 }}
         >
           Le son qui frappe. Production, kits et drops qui restent en tête.
         </motion.p>
@@ -78,7 +83,7 @@ export default function Hero() {
           className="mt-9 flex flex-wrap items-center justify-center gap-4"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65, duration: 0.85 }}
+          transition={{ delay: 1.3, duration: 0.85 }}
         >
           <MagneticButton href="/drops">Voir les drops</MagneticButton>
           <MagneticButton href="/contact" variant="ghost">
@@ -92,7 +97,7 @@ export default function Hero() {
         className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.55 }}
-        transition={{ delay: 1.4 }}
+        transition={{ delay: 1.6 }}
       >
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/25 p-1.5">
           <motion.span

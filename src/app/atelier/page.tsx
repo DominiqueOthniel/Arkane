@@ -3,6 +3,7 @@ import FullBleedVisual from "@/components/FullBleedVisual";
 import MagneticButton from "@/components/MagneticButton";
 import PageHero from "@/components/PageHero";
 import ScrollChrome from "@/components/ScrollChrome";
+import VowSlogan from "@/components/VowSlogan";
 
 export const metadata: Metadata = {
   title: "Atelier",
@@ -69,6 +70,9 @@ export default function AtelierPage() {
       />
 
       <section className="section-pad mx-auto max-w-3xl py-20 text-center sm:py-28">
+        <div className="mb-8 flex justify-center">
+          <VowSlogan variant="seal" />
+        </div>
         <ScrollChrome className="text-3xl sm:text-4xl">
           Réserve une session.
         </ScrollChrome>
