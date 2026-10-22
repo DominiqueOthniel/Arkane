@@ -3,11 +3,12 @@ import FullBleedVisual from "@/components/FullBleedVisual";
 import MagneticButton from "@/components/MagneticButton";
 import PageHero from "@/components/PageHero";
 import ScrollChrome from "@/components/ScrollChrome";
+import VowBlock from "@/components/VowBlock";
+import { SLOGAN } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Signature",
-  description:
-    "La signature Arkane: noir absolu, argent liquide, melody first. Identité sonore de maison.",
+  description: `${SLOGAN}. Noir absolu, argent liquide, melody first. Identité sonore de maison.`,
 };
 
 const values = [
@@ -65,6 +66,8 @@ export default function SignaturePage() {
         alt="Session Arkane dans le noir"
         caption="Noir absolu. Argent en fusion."
       />
+
+      <VowBlock line="La signature n’est pas un logo. C’est ce qui reste quand le volume tombe." />
 
       <section className="section-pad mx-auto max-w-3xl py-20 text-center sm:py-28">
         <ScrollChrome className="text-3xl sm:text-4xl">

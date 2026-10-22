@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import MagneticButton from "@/components/MagneticButton";
 import PageHero from "@/components/PageHero";
 import ScrollChrome from "@/components/ScrollChrome";
+import VowSlogan from "@/components/VowSlogan";
+import { SLOGAN } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contacte Arkane pour une session, un kit ou une identité sonore. Passons en session.",
+  description: `${SLOGAN}. Contacte Arkane pour une session, un kit ou une identité sonore.`,
 };
 
 const channels = [
@@ -78,6 +79,13 @@ export default function ContactPage() {
           >
             Ouvrir TikTok
           </MagneticButton>
+        </div>
+
+        <div className="mt-20 flex flex-col items-center border-t border-white/10 pt-14 text-center">
+          <VowSlogan variant="seal" />
+          <p className="mt-5 max-w-sm text-sm text-chrome-500">
+            On répond. On sculpte. On livre.
+          </p>
         </div>
       </section>
     </main>
