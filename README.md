@@ -22,14 +22,23 @@ npm start
 
 ## Déploiement Netlify
 
-Config dans `netlify.toml` (build `npm run build`, Node 22, publish `.next`).
-Netlify applique automatiquement l’adaptateur Next.js (OpenNext). Pas de variables d’environnement requises pour ce site.
+Config dans `netlify.toml`:
+- build: `npm run build`
+- publish: `.next`
+- plugin: `@netlify/plugin-nextjs` (runtime Next, pas un dossier `.next` servi en statique)
+- Node 22
 
-1. Sur [app.netlify.com](https://app.netlify.com), **Add new site** → **Import an existing project**.
-2. Connecte le dépôt GitHub `DominiqueOthniel/Arkane`.
-3. Branche de production: `main` (ou la branche PR pour un deploy preview).
-4. Laisse Netlify lire `netlify.toml` (ne change pas le build command ni le publish directory).
-5. Déploie. Aucune env var obligatoire.
+Aucune variable d’environnement requise. Ne pas définir `NETLIFY_NEXT_PLUGIN_SKIP`.
+
+### Site existant (`4ne`)
+
+1. Ouvre le site sur [app.netlify.com](https://app.netlify.com) (slug `4ne`).
+2. **Site configuration** → **Build & deploy** → **Continuous deployment**.
+3. Branche de production: celle qui contient ce code (`main` après merge, ou `cursor/arkane-dark-chrome-site-3ce4` pour tester).
+4. **Build settings**: efface les overrides UI pour Build command et Publish directory (laisse `netlify.toml` décider), ou mets exactement `npm run build` et `.next`.
+5. **Environment variables**: retire `NETLIFY_NEXT_PLUGIN_SKIP` si elle existe.
+6. **Deploys** → **Trigger deploy** → **Clear cache and deploy site**.
+7. Vérifie https://4ne.netlify.app
 
 ## Stack
 

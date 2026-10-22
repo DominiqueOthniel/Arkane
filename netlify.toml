@@ -1,6 +1,5 @@
 # Arkane on Netlify (Next.js App Router).
-# Netlify auto-applies the OpenNext adapter for Next.js 13.5+.
-# Do not pin @netlify/plugin-nextjs unless you need a fixed adapter version.
+# Explicit Next.js runtime so Netlify does not treat .next as a bare static folder.
 
 [build]
   command = "npm run build"
@@ -9,3 +8,6 @@
 [build.environment]
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
