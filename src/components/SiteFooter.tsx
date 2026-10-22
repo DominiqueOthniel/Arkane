@@ -1,0 +1,44 @@
+import Link from "next/link";
+import { navLinks } from "@/lib/nav";
+
+export default function SiteFooter() {
+  return (
+    <footer className="section-pad relative border-t border-white/10 bg-ink py-12">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="font-display text-sm tracking-[0.35em] text-chrome-200">
+            ARKANE
+          </p>
+          <p className="mt-3 max-w-xs text-sm text-chrome-400">
+            Maison de production musicale. Beats, kits, mix. Chrome liquide,
+            bass qui percute.
+          </p>
+        </div>
+
+        <nav className="flex flex-wrap gap-x-6 gap-y-3 text-xs uppercase tracking-[0.2em] text-chrome-400">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="transition hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="text-xs uppercase tracking-[0.2em] text-chrome-500">
+          <p>© {new Date().getFullYear()} Arkane</p>
+          <a
+            href="https://www.tiktok.com/@arkanedot"
+            className="mt-2 inline-block transition hover:text-chrome-200"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TikTok @arkanedot
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}

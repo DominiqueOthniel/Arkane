@@ -44,6 +44,14 @@ Config `netlify.toml`:
 5. **Deploys** → **Trigger deploy** → **Clear cache and deploy site**.
 6. Vérifie https://ark4ne.netlify.app
 
+## Pages
+
+- `/` Accueil
+- `/atelier` Studio
+- `/drops` Kits et drops
+- `/signature` Identité
+- `/contact` Contact
+
 ## Stack
 
 - Next.js (App Router, export statique)
