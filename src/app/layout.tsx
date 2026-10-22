@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Arkane sculpte des sons chrome: production, kits, mix et identité sonore. Noir absolu, argent liquide.",
   openGraph: {
     title: "Arkane",
-    description: "Maison de production musicale. Le son qui frappe.",
+    description: "Maison de production musicale. L’Arkane vaincra.",
     images: ["/arkane-logo.jpg"],
   },
 };

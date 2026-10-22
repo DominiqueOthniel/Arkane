@@ -66,24 +66,15 @@ export default function Hero() {
           ARKANE
         </motion.h1>
 
-        <div className="mt-6 sm:mt-8">
+        <div className="mt-5 sm:mt-7">
           <VowSlogan variant="hero" />
         </div>
 
-        <motion.p
-          className="mt-6 max-w-md font-body text-sm text-chrome-300/90 sm:text-base"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.15, duration: 0.9 }}
-        >
-          Le son qui frappe. Production, kits et drops qui restent en tête.
-        </motion.p>
-
         <motion.div
-          className="mt-9 flex flex-wrap items-center justify-center gap-4"
+          className="mt-8 flex flex-wrap items-center justify-center gap-4 sm:mt-9"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.85 }}
+          transition={{ delay: 1.2, duration: 0.85 }}
         >
           <MagneticButton href="/drops">Voir les drops</MagneticButton>
           <MagneticButton href="/contact" variant="ghost">
