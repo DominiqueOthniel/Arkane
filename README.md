@@ -13,36 +13,33 @@ npm run dev
 
 Ouvre [http://localhost:3000](http://localhost:3000).
 
-## Build (export statique)
+## Build
 
 ```bash
 npm run build
+npm start
 ```
 
-Génère le dossier `out/` (HTML statique). Pour prévisualiser:
+## Déploiement Vercel
 
-```bash
-npx serve out
-```
+Preset framework: **Next.js**. Aucun `vercel.json` requis.
 
-## Déploiement Netlify (site `ark4ne`)
+| Réglage | Valeur |
+| --- | --- |
+| Root Directory | `.` |
+| Build Command | `npm run build` (défaut Vercel) |
+| Output | géré par Vercel (`.next`) |
+| Install Command | `npm install` |
+| Node | 20+ (voir `.nvmrc` → 22) |
 
-Export Next.js (`output: "export"`). Netlify sert `out/` comme site statique.
+### Importer le dépôt
 
-Config `netlify.toml`:
-- Build command: `npm run build`
-- Publish directory: `out`
-- Node 22
-- `NETLIFY_NEXT_PLUGIN_SKIP=true` (pas de runtime Next)
-
-### Réglages UI pour `ark4ne`
-
-1. Ouvre le site `ark4ne` sur [app.netlify.com](https://app.netlify.com).
-2. **Site configuration** → **Build & deploy** → branche de production: `main` (après merge) ou `cursor/arkane-dark-chrome-site-3ce4`.
-3. Build command: `npm run build` (ou laisse `netlify.toml`).
-4. Publish directory: `out` (pas `.next`).
-5. **Deploys** → **Trigger deploy** → **Clear cache and deploy site**.
-6. Vérifie https://ark4ne.netlify.app
+1. Sur [vercel.com](https://vercel.com), **Add New** → **Project**.
+2. Import Git: `DominiqueOthniel/Arkane`.
+3. Framework Preset: **Next.js**.
+4. Root Directory: `.`
+5. Laisse les commandes par défaut. Aucune variable d’environnement obligatoire.
+6. **Deploy**. Branche de production: `main`.
 
 ## Pages
 
@@ -54,8 +51,8 @@ Config `netlify.toml`:
 
 ## Stack
 
-- Next.js (App Router, export statique)
+- Next.js (App Router)
 - Tailwind CSS
 - Framer Motion
 - Canvas liquid metal + curseur chrome + boutons magnétiques
-- Netlify (publish `out`)
+- Vercel
