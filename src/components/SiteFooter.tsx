@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SLOGAN } from "@/lib/brand";
+import { LINKS, PROFILE } from "@/lib/content";
 import { navLinks } from "@/lib/nav";
 
 export default function SiteFooter() {
@@ -14,8 +15,7 @@ export default function SiteFooter() {
             {SLOGAN}
           </p>
           <p className="mt-3 max-w-xs text-sm text-chrome-400">
-            Maison de production musicale. Beats, kits, mix. Chrome liquide,
-            bass qui percute.
+            {PROFILE.lane}. {PROFILE.base}. OCTAVIA · flips · sessions.
           </p>
         </div>
 
@@ -34,12 +34,20 @@ export default function SiteFooter() {
         <div className="text-xs uppercase tracking-[0.2em] text-chrome-500">
           <p>© {new Date().getFullYear()} Arkane</p>
           <a
-            href="https://www.tiktok.com/@arkanedot"
+            href={LINKS.tiktok}
             className="mt-2 inline-block transition hover:text-chrome-200"
             target="_blank"
             rel="noopener noreferrer"
           >
-            TikTok @arkanedot
+            TikTok {PROFILE.handle}
+          </a>
+          <a
+            href={LINKS.soundcloud}
+            className="mt-2 block transition hover:text-chrome-200"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SoundCloud
           </a>
         </div>
       </div>

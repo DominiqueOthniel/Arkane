@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function VowBlock({
-  line = "Une promesse de maison. Chaque drop, chaque mix, chaque cut.",
+  line = "Titres, kits, dates. On tient jusqu’au fichier livré.",
   variant = "echo",
 }: Props) {
   return (
