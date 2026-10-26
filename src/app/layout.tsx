@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     template: "%s | Arkane",
   },
   description:
-    "Arkane sculpte des sons chrome: production, kits, mix et identité sonore. Noir absolu, argent liquide.",
+    "ARKANE. (@arkanedot): trap, drill, bass. OCTAVIA Drum Kit, flips SoundCloud, sessions atelier. L’Arkane vaincra.",
   openGraph: {
     title: "Arkane",
-    description: "Maison de production musicale. L’Arkane vaincra.",
+    description: "OCTAVIA · flips · sessions. L’Arkane vaincra.",
     images: ["/arkane-logo.jpg"],
   },
 };

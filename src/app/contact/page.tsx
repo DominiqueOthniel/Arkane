@@ -4,22 +4,33 @@ import PageHero from "@/components/PageHero";
 import ScrollChrome from "@/components/ScrollChrome";
 import VowSlogan from "@/components/VowSlogan";
 import { SLOGAN } from "@/lib/brand";
+import { LINKS, PROFILE, STUDIO_OFFERS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `${SLOGAN}. Contacte Arkane pour une session, un kit ou une identité sonore.`,
+  description: `${SLOGAN}. Booking beat, flip ou mix. ${LINKS.emailDisplay} · ${PROFILE.handle}.`,
 };
 
 const channels = [
   {
-    label: "Email",
-    value: "hello@arkane.studio",
-    href: "mailto:hello@arkane.studio",
+    label: "Booking",
+    value: LINKS.emailDisplay,
+    href: LINKS.email,
   },
   {
     label: "TikTok",
-    value: "@arkanedot",
-    href: "https://www.tiktok.com/@arkanedot",
+    value: PROFILE.handle,
+    href: LINKS.tiktok,
+  },
+  {
+    label: "SoundCloud",
+    value: "soundcloud.com/arkanedot",
+    href: LINKS.soundcloud,
+  },
+  {
+    label: "Instagram",
+    value: PROFILE.handle,
+    href: LINKS.instagram,
   },
 ];
 
@@ -28,20 +39,27 @@ export default function ContactPage() {
     <main>
       <PageHero
         eyebrow="Contact"
-        title="Passons en session."
-        line="Un single, un EP, un kit, une identité. Dis-nous ce que tu veux faire résonner."
+        title="Brief + deadline."
+        line="Beat, flip ou mix. Indique le format, le BPM, 3 refs et la date. On répond avec un devis."
         imageSrc="/images/studio-session.jpg"
         imageAlt="Studio Arkane prêt pour une session"
       />
 
       <section className="section-pad relative mx-auto max-w-4xl py-20 sm:py-28">
         <ScrollChrome className="text-3xl sm:text-5xl">
-          On sculpte le reste.
+          Formats dispo
         </ScrollChrome>
-        <p className="mt-6 max-w-xl text-chrome-300">
-          Décris ton projet en quelques lignes: tempo, références, deadline.
-          On revient avec une direction claire et un plan de session.
-        </p>
+        <ul className="mt-10 space-y-6 border-t border-white/10 pt-8">
+          {STUDIO_OFFERS.map((o) => (
+            <li key={o.title}>
+              <p className="font-display text-xl text-chrome-50">{o.title}</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-chrome-500">
+                {o.deliverables}
+              </p>
+              <p className="mt-2 text-sm text-chrome-400">{o.detail}</p>
+            </li>
+          ))}
+        </ul>
 
         <ul className="mt-14 space-y-8 border-t border-white/10 pt-10">
           {channels.map((item) => (
@@ -70,13 +88,8 @@ export default function ContactPage() {
         </ul>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <MagneticButton href="mailto:hello@arkane.studio">
-            Écrire à Arkane
-          </MagneticButton>
-          <MagneticButton
-            href="https://www.tiktok.com/@arkanedot"
-            variant="ghost"
-          >
+          <MagneticButton href={LINKS.email}>Écrire à Arkane</MagneticButton>
+          <MagneticButton href={LINKS.tiktok} variant="ghost">
             Ouvrir TikTok
           </MagneticButton>
         </div>
@@ -84,7 +97,7 @@ export default function ContactPage() {
         <div className="mt-20 flex flex-col items-center border-t border-white/10 pt-14 text-center">
           <VowSlogan variant="seal" />
           <p className="mt-5 max-w-sm text-sm text-chrome-500">
-            On répond. On sculpte. On livre.
+            Réponse sous 48 h ouvrées. Fichiers livrés avec date de drop.
           </p>
         </div>
       </section>

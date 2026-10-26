@@ -5,62 +5,36 @@ import MagneticButton from "@/components/MagneticButton";
 import PageHero from "@/components/PageHero";
 import ScrollChrome from "@/components/ScrollChrome";
 import VowSlogan from "@/components/VowSlogan";
+import { KITS, LINKS, RELEASES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Drops",
   description:
-    "Drops Arkane: drum kits, type beats et packs. Énergie studio, gloss chrome, cuts qui restent.",
+    "OCTAVIA Drum Kit Vol. 1, flips SoundCloud et packs atelier Arkane (@arkanedot).",
 };
-
-const drops = [
-  {
-    name: "Octavia Kit",
-    tag: "Drum kit",
-    line: "Kicks serrés, snares métalliques, hats qui coupent. Prêt pour le night drop.",
-    image: "/images/studio-speakers.jpg",
-  },
-  {
-    name: "Mercury Melodies",
-    tag: "Type beat pack",
-    line: "Loops sombre argent, pads liquides, hooks qui collent dès le premier bar.",
-    image: "/images/chrome-flow.jpg",
-  },
-  {
-    name: "Void One-Shots",
-    tag: "Sound design",
-    line: "Risers, impacts, sweeps chrome. La colle sonore entre tes sections.",
-    image: "/images/studio-console.jpg",
-  },
-  {
-    name: "Night Session",
-    tag: "Beat drop",
-    line: "Projets studio testés en live TikTok. Bass forward, mélodie first.",
-    image: "/images/night-drops.jpg",
-  },
-];
 
 export default function DropsPage() {
   return (
     <main>
       <PageHero
         eyebrow="Drops"
-        title="Kits qui claquent."
-        line="Comme sur TikTok: packs nets, demos brutes, énergie immédiate. Melody first. Genre second."
+        title="OCTAVIA & flips."
+        line="Kit public sur Linktree. Flips et originals sur SoundCloud @arkanedot. Packs atelier listés ci-dessous."
         imageSrc="/images/night-drops.jpg"
         imageAlt="Ambiance nocturne aux reflets chrome"
       />
 
       <section className="section-pad relative mx-auto max-w-6xl py-20 sm:py-28">
         <ScrollChrome className="max-w-2xl text-3xl sm:text-5xl">
-          Catalogue vivant.
+          Kits & packs
         </ScrollChrome>
         <p className="mt-6 max-w-xl text-chrome-300">
-          Chaque drop est sculpté pour la session: FLP-ready, stems propres,
-          vibe Arkane. Pas de filler. Que du matériel qui pousse le beat.
+          OCTAVIA Vol. 1 est le drop public. Les autres packs décrivent ce que
+          l’atelier livre en session (WAV, stems, BPM).
         </p>
 
         <ul className="mt-14 grid gap-8 sm:grid-cols-2">
-          {drops.map((drop) => (
+          {KITS.map((drop) => (
             <li key={drop.name} className="group">
               <div className="relative mb-5 aspect-[16/10] overflow-hidden">
                 <Image
@@ -77,10 +51,16 @@ export default function DropsPage() {
                 <span className="absolute left-4 top-4 text-[10px] uppercase tracking-[0.28em] text-chrome-200">
                   {drop.tag}
                 </span>
+                <span className="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.22em] text-white/80">
+                  {drop.status}
+                </span>
               </div>
               <h2 className="font-display text-2xl text-chrome-50">
                 {drop.name}
               </h2>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-chrome-500">
+                {drop.meta}
+              </p>
               <p className="mt-2 text-sm leading-relaxed text-chrome-400">
                 {drop.line}
               </p>
@@ -89,10 +69,40 @@ export default function DropsPage() {
         </ul>
       </section>
 
+      <section className="section-pad relative mx-auto max-w-6xl border-t border-white/5 py-16 sm:py-24">
+        <ScrollChrome className="max-w-2xl text-3xl sm:text-4xl">
+          SoundCloud
+        </ScrollChrome>
+        <ul className="mt-10 divide-y divide-white/10 border-t border-white/10">
+          {RELEASES.map((r) => (
+            <li
+              key={r.title}
+              className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between"
+            >
+              <div>
+                <p className="font-display text-lg text-chrome-50">{r.title}</p>
+                <p className="text-sm text-chrome-400">
+                  {r.credit} · {r.tags}
+                </p>
+              </div>
+              <p className="text-xs uppercase tracking-[0.2em] text-chrome-500">
+                {r.label} · {r.date}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <MagneticButton href={LINKS.soundcloud}>Écouter</MagneticButton>
+          <MagneticButton href={LINKS.tiktok} variant="ghost">
+            TikTok @arkanedot
+          </MagneticButton>
+        </div>
+      </section>
+
       <FullBleedVisual
         src="/images/studio-speakers.jpg"
         alt="Enceintes studio pour valider les drops"
-        caption="Testé à haut volume. Validé au casque."
+        caption="808 slides · trap · drill"
       />
 
       <section className="section-pad mx-auto max-w-3xl py-20 text-center sm:py-28">
@@ -100,18 +110,15 @@ export default function DropsPage() {
           <VowSlogan variant="seal" />
         </div>
         <ScrollChrome className="text-3xl sm:text-4xl">
-          Un kit sur mesure.
+          Pack sur brief
         </ScrollChrome>
         <p className="mx-auto mt-5 max-w-md text-chrome-300">
-          Besoin d’un pack pour ton EP ou ta chaîne? On construit la signature
-          autour de ton flow.
+          Besoin d’un kit custom (BPM, genre, nombre de one-shots)? Envoie le
+          brief. On répond avec un devis et une date de drop.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <MagneticButton href="/contact">Demander un drop</MagneticButton>
-          <MagneticButton
-            href="https://www.tiktok.com/@arkanedot"
-            variant="ghost"
-          >
+          <MagneticButton href="/contact">Demander un pack</MagneticButton>
+          <MagneticButton href={LINKS.tiktok} variant="ghost">
             Voir sur TikTok
           </MagneticButton>
         </div>
