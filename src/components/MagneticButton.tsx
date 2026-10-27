@@ -4,6 +4,7 @@ import {
   motion,
   useMotionTemplate,
   useMotionValue,
+  useReducedMotion,
   useSpring,
 } from "framer-motion";
 import { useRef } from "react";
@@ -20,20 +21,22 @@ export default function MagneticButton({
   variant = "solid",
 }: Props) {
   const ref = useRef<HTMLAnchorElement>(null);
+  const reduce = useReducedMotion();
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const x = useSpring(mx, { stiffness: 280, damping: 18, mass: 0.35 });
-  const y = useSpring(my, { stiffness: 280, damping: 18, mass: 0.35 });
+  const x = useSpring(mx, { stiffness: 260, damping: 22, mass: 0.4 });
+  const y = useSpring(my, { stiffness: 260, damping: 22, mass: 0.4 });
   const transform = useMotionTemplate`translate3d(${x}px, ${y}px, 0)`;
 
   const onMove = (e: React.PointerEvent) => {
+    if (reduce) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
     const dx = e.clientX - (rect.left + rect.width / 2);
     const dy = e.clientY - (rect.top + rect.height / 2);
-    mx.set(dx * 0.28);
-    my.set(dy * 0.28);
+    mx.set(dx * 0.18);
+    my.set(dy * 0.18);
   };
 
   const reset = () => {
