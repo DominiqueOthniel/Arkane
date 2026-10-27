@@ -6,7 +6,7 @@ import { navLinks } from "@/lib/nav";
 export default function SiteFooter() {
   return (
     <footer className="section-pad relative border-t border-white/10 bg-ink py-12">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+      <div className="shell flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <p className="font-display text-sm tracking-[0.35em] text-chrome-200">
             ARKANE

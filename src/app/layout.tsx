@@ -18,7 +18,7 @@ const body = Sora({
 
 export const metadata: Metadata = {
   title: {
-    default: "Arkane | Maison de production musicale",
+    default: "Arkane | Trap, drill & 808",
     template: "%s | Arkane",
   },
   description:
